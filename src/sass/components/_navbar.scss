@@ -1,9 +1,7 @@
 .navbar {
   background: rgb(245, 235, 220);
   color: rgb(31, 31, 31);
-  max-height: 78px;
   margin: 0px auto;
-  padding: 30px;
   max-width: 100%;
 
   .sticky {
@@ -16,7 +14,9 @@
   ul {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    max-height: 78px;
+    padding: 30px;
+    gap: 1.5rem;
 
     li {
       padding: 0;
@@ -24,25 +24,19 @@
 
     .burgerkingLogo {
       max-width: 3.5rem;
-      padding: 1rem 1rem;
+      margin: -1rem 2.5rem;
     }
 
     .dropdownMenu {
       opacity: 1;
       position: absolute;
-      top: 78px;
-      left: 525.949px;
-      width: 320px;
-      display: inline-block;
+      top: 4.9rem;
+      left: 28rem;
+      padding: 22rem 0.6rem 22rem;
       box-sizing: border-box;
       background: rgb(245, 235, 220);
       border-radius: 10px;
       box-shadow: rgb(0 0 0 / 10%) 0px 2px 8px;
-      transform: translate(-50%, 0rem);
-      transition: opacity 200ms ease-out 0s, transform 200ms ease-out 0s,
-        visibility 200ms ease-out 0s;
-      visibility: visible;
-      z-index: 300;
 
       ul {
         display: flex;

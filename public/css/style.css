@@ -327,9 +327,7 @@ header .header-actions #fontSave:active {
 .navbar {
   background: rgb(245, 235, 220);
   color: rgb(31, 31, 31);
-  max-height: 78px;
   margin: 0px auto;
-  padding: 30px;
   max-width: 100%;
 }
 .navbar .sticky {
@@ -340,30 +338,27 @@ header .header-actions #fontSave:active {
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  max-height: 78px;
+  padding: 30px;
+  gap: 1.5rem;
 }
 .navbar ul li {
   padding: 0;
 }
 .navbar ul .burgerkingLogo {
   max-width: 3.5rem;
-  padding: 1rem 1rem;
+  margin: -1rem 2.5rem;
 }
 .navbar ul .dropdownMenu {
   opacity: 1;
   position: absolute;
-  top: 78px;
-  left: 525.949px;
-  width: 320px;
-  display: inline-block;
+  top: 4.9rem;
+  left: 28rem;
+  padding: 22rem 0.6rem 22rem;
   box-sizing: border-box;
   background: rgb(245, 235, 220);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
-  transform: translate(-50%, 0rem);
-  transition: opacity 200ms ease-out 0s, transform 200ms ease-out 0s, visibility 200ms ease-out 0s;
-  visibility: visible;
-  z-index: 300;
 }
 .navbar ul .dropdownMenu ul {
   display: flex;

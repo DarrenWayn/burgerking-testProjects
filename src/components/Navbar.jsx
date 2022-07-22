@@ -1,17 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import { dropdownMenu as menus } from '../utils/data';
 import LogoBk from '../assets/images/bk-logo.png';
 
 const Navbar = () => {
+  const [dropdown, setDropdown] = useState(false);
   return (
     <div className="navbar sticky">
-      <Nav />
+      <Nav dropdown={dropdown} setDropdown={setDropdown} />
     </div>
   );
 };
 
-const Nav = () => {
+const Nav = ({ dropdown, setDropdown, items, depthLevel }) => {
+  const onMouseEnter = () => {
+    window.innerWidth > 960 && setDropdown(true);
+  };
+
+  const onMouseLeave = () => {
+    window.innerWidth > 960 && setDropdown(false);
+  };
   return (
     <>
       <div className="humbergerMenu"></div>
@@ -36,19 +44,27 @@ const Nav = () => {
         </li>
 
         {/* Dropdown Menu */}
-        <div class="dropdownMenu">
+        <button
+          className="dropdownMenu"
+          aria-expanded={dropdown ? 'true' : 'false'}
+          onClick={() => setDropdown(prev => !prev)}
+        >
           <ul>
             {menus.map(m => {
               return (
                 <>
-                  <li>
+                  <li
+                    dropdown={dropdown}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                  >
                     <a href={m.link}>{m.menu}</a>
                   </li>
                 </>
               );
             })}
           </ul>
-        </div>
+        </button>
 
         <li className="burgerkingLogo">
           <a href="#">

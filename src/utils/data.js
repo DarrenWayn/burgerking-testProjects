@@ -1,6 +1,6 @@
 export const dropdownMenu = [
   {
-    menu: 'About Bk',
+    menu: 'About BK',
     link: '#',
   },
   {
