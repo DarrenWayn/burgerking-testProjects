@@ -1,9 +1,57 @@
-input,
 button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none;
-  background: blue;
+  font-family: Flame, sans-serif;
+}
+
+.btnRed {
+  font-weight: normal;
+  font-size: 0.875rem;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $light;
+  background-color: red;
+  outline: 0px;
+  border: 0px;
+  border-radius: 9999rem;
+  width: auto;
+  cursor: pointer;
+  padding: 0.375rem 1.5rem;
+  transition: all 0.125s ease 0s;
+  display: block;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-top: -5px;
+}
+
+.btnCart {
+  font-weight: normal;
+  font-size: 0.875rem;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: 0px;
+  border: 0px;
+  border-radius: 9999rem;
+  width: auto;
+  margin-top: -5px;
+  cursor: pointer;
+  padding: 0.375rem 1.5rem;
+  transition: all 0.125s ease 0s;
+  display: block;
+  flex-shrink: 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(245, 235, 220);
+  border-color: rgb(80, 35, 20);
+  background: rgb(80, 35, 20);
 }

@@ -1,8 +1,21 @@
 .navbar {
-  background: rgb(245, 235, 220);
+  background: $softColor;
   color: rgb(31, 31, 31);
   margin: 0px auto;
   max-width: 100%;
+
+  .humburgerShow {
+    display: block;
+  }
+
+  .humburgerRemove {
+    display: none;
+  }
+
+  .burgerkingLogo {
+    max-width: 3.5rem;
+    margin: -1rem 2rem;
+  }
 
   .sticky {
     position: fixed;
@@ -10,38 +23,36 @@
     width: 100%;
   }
 
-  // Start Navbar Left
-  ul {
+  .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     max-height: 78px;
     padding: 30px;
     gap: 1.5rem;
+    font-weight: bolder;
 
-    li {
-      padding: 0;
-    }
+    .dropdown {
+      visibility: visible;
 
-    .burgerkingLogo {
-      max-width: 3.5rem;
-      margin: -1rem 2.5rem;
-    }
-
-    .dropdownMenu {
       opacity: 1;
       position: absolute;
-      top: 4.9rem;
-      left: 28rem;
-      padding: 22rem 0.6rem 22rem;
+      top: 78px;
+      left: 526px;
+      width: 320px;
+
       box-sizing: border-box;
       background: rgb(245, 235, 220);
       border-radius: 10px;
-      box-shadow: rgb(0 0 0 / 10%) 0px 2px 8px;
+    }
 
-      ul {
-        display: flex;
-        flex-direction: column;
-      }
+    .dropdownItem a {
+      width: 100%;
+      height: 100%;
+    }
+    .hasDropdown:focus-within .dropdown {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

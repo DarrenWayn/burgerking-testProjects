@@ -1,45 +1,35 @@
 // reset styles
 * {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Fira Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Flame, 'Cooper Black', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  color: rgb(80, 35, 20);
 }
 
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 hr {
-    border: 0;
-    border-top: 1px dotted #efefef;
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+br {
+  border: 0;
+  border-top: 1px dotted #efefef;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-.container {
-    // display: flex;
-    // flex-direction: column;
-    // min-height: 150vh;
-    // background-color: $darker;
-    // color: white;
-    // padding: 1rem;
-    // width: min(25rem, 100%, 40rem);
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 1;
-    min-height: 150vh;
-    background-color: $darker;
-    color: white;
-
-    // @include xxl {
-    //     width: clamp(28rem, 100%, 360rem);
-    // }
+.App {
+  background-color: $softColor;
 }

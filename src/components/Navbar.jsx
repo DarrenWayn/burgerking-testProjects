@@ -1,70 +1,39 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
-import { dropdownMenu as menus } from '../utils/data';
+import React from 'react';
+import { mainMenu as menus, dropdownMenu as dropmenus } from '../utils/data';
+import useMediaQuery from '../hooks/useMediaQuery';
 import LogoBk from '../assets/images/bk-logo.png';
 
 const Navbar = () => {
-  const [dropdown, setDropdown] = useState(false);
+  const isTablet = useMediaQuery('(min-width: 720px)');
+
   return (
     <div className="navbar sticky">
-      <Nav dropdown={dropdown} setDropdown={setDropdown} />
-    </div>
-  );
-};
-
-const Nav = ({ dropdown, setDropdown, items, depthLevel }) => {
-  const onMouseEnter = () => {
-    window.innerWidth > 960 && setDropdown(true);
-  };
-
-  const onMouseLeave = () => {
-    window.innerWidth > 960 && setDropdown(false);
-  };
-  return (
-    <>
-      <div className="humbergerMenu"></div>
-      <ul>
-        <li>
-          <a href="#">Menu</a>
-        </li>
-        <li>
-          <a href="#">Offers</a>
-        </li>
-        <li>
-          <a href="#">Restaurants</a>
-        </li>
-        <li>
-          <a href="#">Careers</a>
-        </li>
-        <li>
-          <a href="#">Rewards</a>
-        </li>
-        <li>
-          <a href="#">More ▾</a>
-        </li>
-
-        {/* Dropdown Menu */}
-        <button
-          className="dropdownMenu"
-          aria-expanded={dropdown ? 'true' : 'false'}
-          onClick={() => setDropdown(prev => !prev)}
-        >
-          <ul>
-            {menus.map(m => {
-              return (
-                <>
-                  <li
-                    dropdown={dropdown}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                  >
-                    <a href={m.link}>{m.menu}</a>
-                  </li>
-                </>
-              );
-            })}
-          </ul>
-        </button>
+      <div className={`base ${isTablet ? 'humburgerShow' : 'humburgerRemove'}`}>
+        <span>test</span>
+      </div>
+      <ul className="nav">
+        {menus.map(m => {
+          return (
+            <>
+              <li>
+                <a href={m.link}>{m.menu}</a>
+                {/* Dropdown Menu */}
+                <ul className="dropdown">
+                  {dropmenus.map(m => {
+                    return (
+                      <>
+                        <li className="dropdownItem">
+                          <a href={m.link}>{m.menu}</a>
+                        </li>
+                      </>
+                    );
+                  })}
+                </ul>
+              </li>
+            </>
+          );
+        })}
 
         <li className="burgerkingLogo">
           <a href="#">
@@ -72,16 +41,19 @@ const Nav = ({ dropdown, setDropdown, items, depthLevel }) => {
           </a>
         </li>
         <li>
-          For item availability <a href="#">Choose your location</a>
+          For item availability
+          <a href="#" className="textRed">
+            Choose your location
+          </a>
         </li>
         <li>
-          <button className="btn-red">Sign Up</button>
+          <button className="btnRed">Sign Up</button>
         </li>
         <li>
-          <button className="btn-cart">0.00</button>
+          <button className="btnCart">0.00</button>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

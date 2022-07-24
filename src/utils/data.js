@@ -1,3 +1,30 @@
+export const mainMenu = [
+  {
+    menu: 'Menu',
+    link: '#',
+  },
+  {
+    menu: 'Offers',
+    link: '#',
+  },
+  {
+    menu: 'Restaurants',
+    link: '#',
+  },
+  {
+    menu: 'Careers',
+    link: '#',
+  },
+  {
+    menu: 'Reward',
+    link: '#',
+  },
+  {
+    menu: 'More ▾',
+    link: '#',
+  },
+];
+
 export const dropdownMenu = [
   {
     menu: 'About BK',
